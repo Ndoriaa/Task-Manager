@@ -1,15 +1,16 @@
 FROM php:8.2-apache
 
-# Enable rewrite for your .htaccess file
-RUN a2enmod rewrite
-
-# Install MySQL extensions (Since TaskFlow uses MySQL)
+# 1. Install MySQL extensions so your PHP can talk to a database
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Copy everything into the server
+# 2. Copy all your files from the current folder into the server's web root
 COPY . /var/www/html/
 
-# Set permissions for your images and uploads
+# 3. Tell Apache to look for your specific login or index file
+# Replace 'login.php' with whatever your main file is named (e.g., index.php)
+RUN echo "DirectoryIndex login.php index.php" >> /etc/apache2/apache2.conf
+
+# 4. Set permissions
 RUN chown -R www-data:www-data /var/www/html/
 
 EXPOSE 80
