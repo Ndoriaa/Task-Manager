@@ -1,0 +1,347 @@
+body {
+  margin: 0;
+  color: #ffffff; /* White text for contrast */
+  background-color: #001f3f;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+}
+
+
+#container {
+  width: 960px;
+  background: #ffffff;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#logo {
+  display: block;
+  width: 30px;
+  padding: 0 660px 20px 0;
+  border: none;
+  border-bottom: 1px solid #ffc300; /* Gold */
+  margin-bottom: 40px;
+}
+
+#footer {
+  border-top: 1px solid #ffc300;
+  margin-top: 40px;
+  padding: 20px 0 0 0;
+  font-size: .8em;
+  color: #001f3f !important;;
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  color: #ffc300;
+  margin-bottom: 30px;
+  line-height: 1.2em;
+}
+
+h2, h2 a {
+  color: #ffdf6c; /* Lighter gold */
+}
+
+h2 a {
+  text-decoration: none;
+}
+
+/* Article headlines */
+#headlines {
+  list-style: none;
+  padding-left: 0;
+  width: 75%;
+}
+
+#headlines li {
+  margin-bottom: 2em;
+}
+
+.pubDate {
+  font-size: .8em;
+  color: #ffcc00;
+  text-transform: uppercase;
+}
+
+#headlines .pubDate {
+  display: inline-block;
+  width: 100px;
+  font-size: .5em;
+  vertical-align: middle;
+}
+
+#headlines.archive .pubDate {
+  width: 130px;
+}
+
+.summary {
+  padding-left: 100px;
+}
+
+#headlines.archive .summary {
+  padding-left: 130px;
+}
+
+/* Admin header */
+#adminHeader {
+  width: 940px;
+  padding: 0 10px;
+  border-bottom: 1px solid #ffc300;
+  margin: -30px 0 40px 0;
+  font-size: 0.8em;
+  color: #fff;
+}
+
+/* Forms */
+form {
+  margin: 20px auto;
+  padding: 40px 20px;
+  overflow: auto;
+  background: #fefbea; /* light gold-ish background */
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+form ul li {
+  margin: .9em 0 0 0;
+  padding: 0;
+}
+
+form * {
+  line-height: 1em;
+}
+
+label {
+  display: block;
+  float: left;
+  clear: left;
+  text-align: right;
+  width: 15%;
+  padding: .4em 0 0 0;
+  margin: .15em .5em 0 0;
+  color: #001f3f;
+}
+
+input, select, textarea {
+  display: block;
+  margin: 0;
+  padding: .4em;
+  width: 80%;
+  border: 2px solid #001f3f;
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+input {
+  font-size: .9em;
+}
+
+select {
+  padding: 0;
+  margin-bottom: 2.5em;
+  position: relative;
+  top: .7em;
+}
+
+textarea {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: .9em;
+  height: 5em;
+  line-height: 1.5em;
+}
+
+textarea#content {
+  font-family: "Courier New", courier, monospace;
+}
+
+form *:focus {
+  border: 2px solid #ffc300;
+  outline: none;
+}
+
+input:valid, textarea:valid {
+  background: #eaffea;
+}
+
+/* Buttons */
+.buttons {
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+
+/* Minimal button styling to remove background, borders, padding */
+.buttons.edit-task-btn,
+.buttons.delete-task-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Optional: Add colors for each action */
+.edit-task-btn {
+  color: blue;
+}
+
+.delete-task-btn {
+  color: red;
+}
+
+
+input[type="submit"] {
+  display: inline;
+  margin: 0 20px;
+  width: 12em;
+  padding: 10px;
+  border: 2px solid #ffc300;
+  border-radius: 5px;
+  background: #001f3f;
+  color: #ffc300;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+input[type="submit"]:hover, input[type="submit"]:active {
+  background: #ffc300;
+  color: #001f3f;
+}
+
+input[type="submit"]:active {
+  background: #fff;
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr, th, td {
+  padding: 10px;
+  margin: 0;
+  text-align: left;
+}
+
+table, th {
+  border: 1px solid #ffc300;
+}
+
+th {
+  border-left: none;
+  border-right: none;
+  background: #001f3f;
+  color: #ffc300;
+  cursor: default;
+}
+
+tr:nth-child(odd) {
+  background: #fdf7e3;
+}
+
+tr:nth-child(even) {
+  background: #ffffff;
+}
+
+tr:hover {
+  background: #e1f0ff;
+  cursor: pointer;
+}
+
+/* Status & error messages */
+.statusMessage, .errorMessage {
+  font-size: .8em;
+  padding: .5em;
+  margin: 2em 0;
+  border-radius: 5px;
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+.statusMessage {
+  background-color: #2b2;
+  border: 1px solid #080;
+  color: #fff;
+}
+
+.errorMessage {
+  background-color: #c0392b;
+  border: 1px solid #800;
+  color: #fff;
+}
+
+#taskFormContainer {
+  background-color: #ffffff;
+  color: #000;
+}
+
+#taskForm .form-label {
+  font-weight: bold;
+}
+
+#taskForm .form-control,
+#taskForm .form-select {
+  margin-bottom: 15px;
+}
+
+#taskForm textarea.form-control {
+  height: 100px;
+  width: 800px;
+}
+
+#taskForm button,
+#taskForm input[type="submit"] {
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  #taskForm .form-control,
+  #taskForm .form-select {
+    width: 100%;
+  }
+}
+#taskFormContainer label {
+  display: block;
+  float: none;
+  clear: none;
+  text-align: left;
+  width: 100%;
+  margin: 0 0 0.4em 0;
+}
+
+#taskFormContainer input,
+#taskFormContainer select,
+#taskFormContainer textarea {
+  width: 100% !important;
+  padding: 0.5em;
+}
+
+#taskFormContainer .mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+#taskFormContainer .form-label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+#confirmDeleteLabel{
+  color: #000;
+}
+
+#confirmDeleteMessage{
+  color: black;
+}

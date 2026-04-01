@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /TaskManager/
+
+# If the requested file or directory exists, do nothing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ADD THIS LINE to support /filterTasks URL:
+RewriteRule ^filterTasks$ admin.php?action=filterTasks [QSA,L]
+
+# Rewrite clean URLs like /createTask to admin.php?action=createTask
+RewriteRule ^([a-zA-Z0-9_-]+)$ admin.php?action=$1 [QSA,L]
+
+# OPTIONAL: Redirect from admin.php?action=xyz to /xyz
+RewriteCond %{THE_REQUEST} \s/admin\.php\?action=([^\s&]+) [NC]
+RewriteRule ^admin\.php$ /TaskManager/%1? [R=301,L]
