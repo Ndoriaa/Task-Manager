@@ -11,7 +11,7 @@ COPY . /var/www/html/
 
 # 4. Set DirectoryIndex to your specific login path
 # Note: Ensure the casing matches your folders exactly (e.g., Templates vs templates)
-RUN echo "DirectoryIndex Templates/admin/login.php" >> /etc/apache2/apache2.conf
+RUN echo "DirectoryIndex index.php" >> /etc/apache2/apache2.conf
 
 # 5. Fix permissions so Apache can read the files
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
